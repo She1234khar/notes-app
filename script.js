@@ -16,6 +16,13 @@ function deleteNote(index) {
   localStorage.setItem("notes", JSON.stringify(notes));
   displayNotes();
 }
+const deleteBtn = document.createElement("button");
+deleteBtn.innerText = "Delete";
+deleteBtn.onclick = function () {
+    note.remove();
+};
+note.appendChild(deleteBtn);
+
 
 function getNotes() {
   return JSON.parse(localStorage.getItem("notes") || "[]");
